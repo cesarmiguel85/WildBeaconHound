@@ -1,0 +1,52 @@
+<div class="flex fullflex flexcol bodyheight">
+
+    <div class="sub_main">
+        <div id="scanningWaiting" class="center" ng-show="switch.foundBeacons.length==0">
+
+            <div class="spinnerfullscreen">
+                <i class="fa fa-spinner fa-pulse"></i>
+                <br>
+                <br>
+                <p id="funnyLoading"></p>
+            </div>
+
+        </div>
+
+        <div id="scanResults" class="flex fullflex flexcol">
+
+            <div class="card_holder" ng-repeat="blefound in switch.foundBeacons">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card_id">{{blefound.id}}</div>
+                        <div class="card_rssi">RSSI: {{blefound.rssi}}</div>
+                    </div>
+                    <div class="card-block" >
+                        <select class="setPpeType fullwidth" mac="{{blefound.id}}">
+                            <option value="0" ng-selected="{{blefound.type_ppe == 0}}">Unknown</option>
+                            <option ng-repeat="option in switch.ppe_items" value="{{option.ppe_id}}" ng-selected="{{option.ppe_id == blefound.type_ppe}}">{{option.ppe_name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+<a class="link_back" ng-click="switch.gotoPage(1)" href>
+    <div class="sub_back">
+
+        <div class="home_onebutton back_home" ng-click="switch.page=1">
+
+            <div class="home_button_text">
+                BACK HOME
+            </div>
+            <div class="home_button_arrow">
+                <span class="stretch">&gt;</span>
+            </div>
+        </div>
+
+    </div>
+    </a>
+</div>

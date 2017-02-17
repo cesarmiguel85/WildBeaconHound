@@ -1,0 +1,54 @@
+<div class="flex fullflex flexcol bodyheight">
+
+    <div class="sub_main flexcol">
+        <div class="listofppe">
+
+
+                <li class="list_title">Select the equipment to check</li>
+
+
+                <li ng-repeat="ppe_item in switch.ppe_items" class="ppe_item_li">
+                    <div class="switch_toggle">
+                        <div class="toggle_item">
+                            <div class="toggle_input">
+                                <input type="checkbox" data-toggle="toggle" id='{{("0"+ppe_item.ppe_id).slice(-2)}}' class="toggle_switch" name='{{("0"+ppe_item.ppe_id).slice(-2)}}' value="1" ng-checked="ppe_item.ppe_active===1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text_toggle">
+                        <h2 class="ppe_list">{{ppe_item.ppe_name}}</h2>
+                        <p>{{ppe_item.ppe_desc}}</p>
+                    </div>
+                </li>
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <div class="form-group sensitivitydiv">
+        <label for="example-number-input" class="sensitivity-label">Sensitivity</label>
+        <div class="sensitivity-input">
+            <input class="form-control" type="number" value="-70" id="sensitivity"> <p>(away -100 < -80 < -70 close)</p>
+        </div>
+    </div>
+
+    <a class="link_back" ng-click="switch.gotoPage(1)" href>
+        <div class="sub_back">
+
+            <div class="home_onebutton back_home" ng-click="switch.page=1">
+                <div class="home_button_arrow">
+                    <span class="stretch">&lt;</span>
+                </div>
+                <div class="home_button_text">
+                    BACK HOME
+                </div>
+
+            </div>
+
+        </div>
+    </a>
+</div>

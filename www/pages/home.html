@@ -1,0 +1,50 @@
+<div class="flex fullflex flexcol bodyheight">
+
+    <div class="home_check">
+        <div class="center">
+            <a href ng-click="switch.gotoPage(4); switch.checkNearby();">
+                <div id="crossfade" class="checkequipment col-xs-offset-2 col-xs-8">
+                    <img id="blinkFade" class="top img-responsive" src="images/button_blue.png" />
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="home_buttons">
+        <a ng-click="switch.gotoPage(2); switch.scanNearby(); switch.refresh_ppe_items()" href>
+            <div class="home_onebutton">
+                <!--
+                <div class="home_button_arrow">
+                    <span class="stretch">&lt;</span>
+                </div>
+                <div class="home_button_text">
+                    ASSIGN
+                    <br>NEARBY
+                    <br>BEACONS
+                </div>
+                -->
+
+                <button type="button" class="btn btn-success btn-circle btn-xl centerbutton"><i class="glyphicon glyphicon-search"></i></button>
+
+            </div>
+        </a>
+        <a href ng-click="switch.gotoPage(3); switch.refresh_ppe_items()">
+            <div class="home_onebutton">
+
+                <!--
+                <div class="home_button_text">
+                    SETUP
+                    <br>DETECTION
+                </div>
+                <div class="home_button_arrow">
+                    <span class="stretch">&gt;</span>
+                </div>
+                -->
+
+                <button type="button" class="btn btn-warning btn-circle btn-xl centerbutton"><i class="glyphicon glyphicon-cog"></i></button>
+
+            </div>
+        </a>
+    </div>
+
+</div>

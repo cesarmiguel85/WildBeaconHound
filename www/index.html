@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+<head>
+    <title>Blank Cordova Mobile App Project Template (Lite)</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+
+        @-ms-viewport {
+            width: 100vw;
+            zoom: 100%;
+        }
+
+        @viewport {
+            width: 100vw;
+            zoom: 100%;
+        }
+
+        @-ms-viewport {
+            user-zoom: fixed;
+        }
+
+        @viewport {
+            user-zoom: fixed;
+        }
+    </style>
+
+
+    <!-- CSS FROM FRAMEWORKS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-switch.min.css" />
+
+
+    <!-- USER CSS -->
+    <link rel="stylesheet" href="css/app.css" />
+
+
+    <!--JS FRAMWORKS SCRIPTS TO LOAD-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-switch.min.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src="js/FunnyLoading.js"></script>
+
+    <script src="cordova.js"></script>
+    <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>
+    <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>
+    <!-- normalizes device and document ready events, see README for details -->
+
+
+
+</head>
+
+<body ng-app="pageSwitch">
+
+
+
+
+    <div class="flex header_flex">
+        <div class="header_title">WILD BEACON HOUND</div>
+        <div class="header_info"><a class="infobutton" href data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">About WILD BEACON HOUND</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row centerblock">
+                        <img class="img-responsive col-xs-offset-3 col-xs-6" src="images/FlatHoundCircle.png" />
+                        <div class="col-xs-12 annotation"><span class="">powered by the Open Innovation Lab</span></div>
+                    </div>
+                    <p>This mobile app was developped using the IntelXDK, the Cordova/PhoneGap framework, and AngularJS.</p>
+                    <p>This is not a professional app, we are just a bunch of people learning how to do things by ourselves...</p>
+                    <p>Do you like what you see? Want to learn more about us? Take a look at our website (intranet Total): <a href="http://oil.rc.corp.local">http://oil.rc.corp.local</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="switchController" class="flex_body" ng-controller="switchController as switch">
+
+
+        <homepage ng-show="switch.page==1"></homepage>
+
+        <assignnearby ng-show="switch.page==2"></assignnearby>
+
+        <setupscan ng-show="switch.page==3"></setupscan>
+
+        <results ng-show="switch.page==4"></results>
+
+    </div>
+
+
+</body>
+
+</html>

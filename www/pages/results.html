@@ -1,0 +1,48 @@
+<div class="flex fullflex flexcol bodyheight">
+
+    <div class="sub_main">
+        <div id="checkWaiting" class="center" ng-show="switch.foundBeacons.length==0">
+
+            <div class="spinnerfullscreen">
+                <i class="fa fa-spinner fa-pulse"></i>
+                <br>
+                <br>
+                <p id="checkfunnyLoading"></p>
+            </div>
+
+        </div>
+
+        <div id="checkResults" class="flex fullflex flexcol">
+
+            <div class="container_checks">
+
+
+                <div class="ppe_container_check" ng-repeat="ppe in switch.ppe_items" ng-if="ppe.ppe_active==1" ng-class="{valid : switch.check_ok(ppe.ppe_id), notvalid : switch.check_ok(ppe.ppe_id)==false}">
+                    <div class="ppe_check">
+                        <div class="ppe_img"><i class="fa fa-check-circle-o" aria-hidden="true" ng-show="switch.check_ok({{ppe.ppe_id}})"></i><i class="fa fa-exclamation-triangle" aria-hidden="true" ng-show="switch.check_ok({{ppe.ppe_id}})==false"></i></div>
+                        <div class="ppe_text">{{ppe.ppe_name}}</div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <a class="link_back" ng-click="switch.gotoPage(1)" href>
+        <div class="sub_back">
+
+            <div class="home_onebutton back_home" ng-click="switch.page=1">
+
+                <div class="home_button_text">
+                    BACK HOME
+                </div>
+
+            </div>
+
+        </div>
+    </a>
+</div>
